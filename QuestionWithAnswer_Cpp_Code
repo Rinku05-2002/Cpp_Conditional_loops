@@ -1,0 +1,142 @@
+#include <iostream>
+using namespace std;
+
+// Q2 - Write a program to print absolute value of a number entered by the user
+//     Sample Input: -1
+//     Sample Output: 1
+int absolute(int value)
+{
+    return abs(value);
+}
+
+// Q3- Write a program to take input from user for Cost Price (C.P.) and Selling Price(S.P.) and
+// calculate Profit or Loss.
+// Explanation :
+// Formula for profit and loss
+// Profit = S.P - C.P
+// Loss = C.P - S.P
+// (S.P is Selling Price and C.P is Cost Price)
+void ProfitOrLoss(int SP, int CP)
+{
+    if (SP > CP)
+        cout << "Profit = " << SP - CP << endl;
+    else
+        cout << "Loss = " << abs(SP - CP) << endl;
+}
+
+// Q4- Write a program to print positive number entered by the user, if user enters a negative
+// number, it is skipped.
+// Sample Input : Enter an integer: -6
+// Sample Output : The number is negative and skipped
+void PositiveOnly(int n)
+{
+    if (n < 0)
+    {
+        cout << "The number is negative and skipped" << endl;
+    }
+    else
+    {
+        cout << n << endl;
+    }
+}
+
+int operation(char op, int x, int y)
+{
+    int sum;
+    switch (op)
+    {
+    case '+':
+        sum = x + y;
+        break;
+    case '*':
+        sum = x * y;
+        break;
+    case '/':
+        sum = x / y;
+        break;
+    case '-':
+        sum = x - y;
+        break;
+    default:
+        break;
+    }
+    return sum;
+}
+
+// Q6. Write a program to calculate marks to grades .
+
+void grade(int n)
+{
+    if (n <= 100 && n >= 90)
+        cout << "A+" << endl;
+    else if (n > 90 && n <= 80)
+        cout << "A" << endl;
+    else if (n > 80 && n <= 70)
+        cout << "B+" << endl;
+    else if (n > 70 && n <= 60)
+        cout << "B" << endl;
+    else if (n > 60 && n <= 50)
+        cout << "C" << endl;
+    else if (n > 50 && n <= 40)
+        cout << "D" << endl;
+    else if (n > 40 && n <= 30)
+        cout << "E" << endl;
+    else
+        cout << "F" << endl;
+}
+
+int main()
+{
+    // Q1 - Write a program which takes the values of length and breadth from user and check if it is
+    // a square or not. (Easy)
+    // Sample Input :
+    // Enter length: 5
+    // Enter breadth: 4
+    // Sample Output : It is a rectangle
+    // ANS 1:
+    int x, y;
+    cin >> x >> y;
+    if (x == y)
+    {
+        cout << "Its a Square" << endl;
+    }
+    else
+    {
+        cout << "Its a Rectangle" << endl;
+    }
+
+    // ANS 2:
+    int value;
+    cin >> value;
+    cout << absolute(value) << endl;
+
+    // ANS 3:
+    int SP, CP;
+    cout << "Enter selling and cost price respectively" << endl;
+    cin >> SP >> CP;
+    ProfitOrLoss(SP, CP);
+
+    // ANS 4:
+    int n;
+    cin >> n;
+    PositiveOnly(n);
+
+    // // Q5- Create a calculator using switch statement to perform addition, subtraction, multiplication
+    // // and division
+    // // Sample Input :
+    // // Enter an operator (+, -, *, /): -
+    // // Enter two numbers:
+    // // 6
+    // // 8
+    // // Sample Output : 6 - 8 = -2
+
+    cin >> x >> y;
+    char op;
+    cin >> op;
+    cout << operation(op, x, y);
+    // ANS 6:
+    int n;
+    cin >> n;
+    grade(n);
+    return 0;
+}
